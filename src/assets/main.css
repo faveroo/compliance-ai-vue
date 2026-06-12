@@ -4,54 +4,56 @@
    App Design Tokens — Dark Minimal Theme
 ───────────────────────────────────────── */
 :root {
-  --app-bg:             #0d0d0d;
-  --app-nav-bg:         #111111;
-  --app-card-bg:        #161616;
-  --app-hover-bg:       #1a1a1a;
-  --app-border:         #262626;
-  --app-border-subtle:  #1f1f1f;
+  --app-bg: #0d0d0d;
+  --app-nav-bg: #111111;
+  --app-card-bg: #161616;
+  --app-hover-bg: #1a1a1a;
+  --app-border: #262626;
+  --app-border-subtle: #1f1f1f;
 
-  --app-text-primary:   #e2e8f0;
+  --app-text-primary: #e2e8f0;
   --app-text-secondary: #94a3b8;
-  --app-text-muted:     #4b5563;
+  --app-text-muted: #4b5563;
 
-  --app-accent:         #6366f1;
-  --app-accent-hover:   #4f46e5;
-  --app-accent-glow:    rgba(99, 102, 241, 0.18);
+  --app-accent: #6366f1;
+  --app-accent-hover: #4f46e5;
+  --app-accent-glow: rgba(99, 102, 241, 0.18);
 
-  --app-success:        #10b981;
-  --app-success-bg:     rgba(16, 185, 129, 0.1);
+  --app-success: #10b981;
+  --app-success-bg: rgba(16, 185, 129, 0.1);
   --app-success-border: rgba(16, 185, 129, 0.25);
 
-  --app-warning:        #f59e0b;
-  --app-warning-bg:     rgba(245, 158, 11, 0.1);
+  --app-warning: #f59e0b;
+  --app-warning-bg: rgba(245, 158, 11, 0.1);
   --app-warning-border: rgba(245, 158, 11, 0.25);
 
-  --app-danger:         #ef4444;
-  --app-danger-bg:      rgba(239, 68, 68, 0.1);
-  --app-danger-border:  rgba(239, 68, 68, 0.25);
+  --app-danger: #ef4444;
+  --app-danger-bg: rgba(239, 68, 68, 0.1);
+  --app-danger-border: rgba(239, 68, 68, 0.25);
 
-  --app-font:  'Inter', system-ui, -apple-system, sans-serif;
-  --app-mono:  'JetBrains Mono', ui-monospace, monospace;
+  --app-font: 'Inter', system-ui, -apple-system, sans-serif;
+  --app-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 /* ─────────────────────────────────────────
    Bootstrap Overrides
 ───────────────────────────────────────── */
 :root {
-  --bs-body-font-family:  var(--app-font);
-  --bs-body-bg:           var(--app-bg);
-  --bs-body-color:        var(--app-text-secondary);
-  --bs-border-color:      var(--app-border);
-  --bs-card-bg:           var(--app-card-bg);
-  --bs-link-color:        var(--app-accent);
-  --bs-link-hover-color:  var(--app-accent-hover);
+  --bs-body-font-family: var(--app-font);
+  --bs-body-bg: var(--app-bg);
+  --bs-body-color: var(--app-text-secondary);
+  --bs-border-color: var(--app-border);
+  --bs-card-bg: var(--app-card-bg);
+  --bs-link-color: var(--app-accent);
+  --bs-link-hover-color: var(--app-accent-hover);
 }
 
 /* ─────────────────────────────────────────
    Base Reset & Global
 ───────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -211,15 +213,47 @@ body {
   letter-spacing: 0.04em;
 }
 
-.status-pending   { background: #1c2333; color: #94a3b8; border: 1px solid #2e3a50; }
-.status-processed { background: #1a2340; color: #93c5fd; border: 1px solid #1e3a5f; }
-.status-analyzing { background: #1f1a00; color: #fcd34d; border: 1px solid #3d3200; animation: pulse 2s infinite; }
-.status-analyzed  { background: #0a2010; color: #6ee7b7; border: 1px solid #0d3320; }
-.status-failed    { background: #200a0a; color: #fca5a5; border: 1px solid #3d0f0f; }
+.status-pending {
+  background: #1c2333;
+  color: #94a3b8;
+  border: 1px solid #2e3a50;
+}
+
+.status-processed {
+  background: #1a2340;
+  color: #93c5fd;
+  border: 1px solid #1e3a5f;
+}
+
+.status-analyzing {
+  background: #1f1a00;
+  color: #fcd34d;
+  border: 1px solid #3d3200;
+  animation: pulse 2s infinite;
+}
+
+.status-analyzed {
+  background: #0a2010;
+  color: #6ee7b7;
+  border: 1px solid #0d3320;
+}
+
+.status-failed {
+  background: #200a0a;
+  color: #fca5a5;
+  border: 1px solid #3d0f0f;
+}
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.55; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
 }
 
 /* ─────────────────────────────────────────
@@ -240,9 +274,23 @@ body {
   font-size: 0.78rem;
 }
 
-.risk-low    { background: var(--app-success-bg); color: var(--app-success); border: 1px solid var(--app-success-border); }
-.risk-medium { background: var(--app-warning-bg); color: var(--app-warning); border: 1px solid var(--app-warning-border); }
-.risk-high   { background: var(--app-danger-bg);  color: var(--app-danger);  border: 1px solid var(--app-danger-border); }
+.risk-low {
+  background: var(--app-success-bg);
+  color: var(--app-success);
+  border: 1px solid var(--app-success-border);
+}
+
+.risk-medium {
+  background: var(--app-warning-bg);
+  color: var(--app-warning);
+  border: 1px solid var(--app-warning-border);
+}
+
+.risk-high {
+  background: var(--app-danger-bg);
+  color: var(--app-danger);
+  border: 1px solid var(--app-danger-border);
+}
 
 /* ─────────────────────────────────────────
    Outline Secondary Button (Bootstrap override)
