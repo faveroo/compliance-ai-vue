@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ─────────────────────────────────────────
+   App Design Tokens — Dark Minimal Theme
+───────────────────────────────────────── */
+:root {
+  --app-bg:             #0d0d0d;
+  --app-nav-bg:         #111111;
+  --app-card-bg:        #161616;
+  --app-hover-bg:       #1a1a1a;
+  --app-border:         #262626;
+  --app-border-subtle:  #1f1f1f;
+
+  --app-text-primary:   #e2e8f0;
+  --app-text-secondary: #94a3b8;
+  --app-text-muted:     #4b5563;
+
+  --app-accent:         #6366f1;
+  --app-accent-hover:   #4f46e5;
+  --app-accent-glow:    rgba(99, 102, 241, 0.18);
+
+  --app-success:        #10b981;
+  --app-success-bg:     rgba(16, 185, 129, 0.1);
+  --app-success-border: rgba(16, 185, 129, 0.25);
+
+  --app-warning:        #f59e0b;
+  --app-warning-bg:     rgba(245, 158, 11, 0.1);
+  --app-warning-border: rgba(245, 158, 11, 0.25);
+
+  --app-danger:         #ef4444;
+  --app-danger-bg:      rgba(239, 68, 68, 0.1);
+  --app-danger-border:  rgba(239, 68, 68, 0.25);
+
+  --app-font:  'Inter', system-ui, -apple-system, sans-serif;
+  --app-mono:  'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ─────────────────────────────────────────
+   Bootstrap Overrides
+───────────────────────────────────────── */
+:root {
+  --bs-body-font-family:  var(--app-font);
+  --bs-body-bg:           var(--app-bg);
+  --bs-body-color:        var(--app-text-secondary);
+  --bs-border-color:      var(--app-border);
+  --bs-card-bg:           var(--app-card-bg);
+  --bs-link-color:        var(--app-accent);
+  --bs-link-hover-color:  var(--app-accent-hover);
+}
+
+/* ─────────────────────────────────────────
+   Base Reset & Global
+───────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--app-font);
+  background-color: var(--app-bg);
+  color: var(--app-text-secondary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─────────────────────────────────────────
+   App Card
+───────────────────────────────────────── */
+.app-card {
+  background-color: var(--app-card-bg);
+  border: 1px solid var(--app-border);
+  border-radius: 0.6rem;
+  padding: 1.5rem;
+}
+
+/* ─────────────────────────────────────────
+   Buttons
+───────────────────────────────────────── */
+.app-btn-primary {
+  background-color: var(--app-accent);
+  border: 1px solid var(--app-accent);
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.app-btn-primary:hover:not(:disabled) {
+  background-color: var(--app-accent-hover);
+  border-color: var(--app-accent-hover);
+  color: #fff;
+}
+
+.app-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.app-btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--app-border);
+  color: var(--app-text-secondary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.app-btn-secondary:hover:not(:disabled) {
+  background-color: var(--app-hover-bg);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--app-text-primary);
+}
+
+.app-btn-secondary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.app-btn-danger {
+  background-color: var(--app-danger-bg);
+  border: 1px solid var(--app-danger-border);
+  color: #fca5a5;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.app-btn-danger:hover:not(:disabled) {
+  background-color: var(--app-danger);
+  color: #fff;
+}
+
+.app-btn-danger:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ─────────────────────────────────────────
+   Forms
+───────────────────────────────────────── */
+.app-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--app-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.app-input,
+.form-control.app-input {
+  background-color: var(--app-hover-bg);
+  border: 1px solid var(--app-border);
+  color: var(--app-text-primary);
+  font-family: var(--app-font);
+  font-size: 0.875rem;
+  border-radius: 0.45rem;
+  padding: 0.55rem 0.85rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.app-input:focus,
+.form-control.app-input:focus {
+  background-color: var(--app-hover-bg);
+  border-color: var(--app-accent);
+  color: var(--app-text-primary);
+  box-shadow: 0 0 0 3px var(--app-accent-glow);
+  outline: none;
+}
+
+.app-input::placeholder {
+  color: var(--app-text-muted);
+}
+
+/* ─────────────────────────────────────────
+   Alerts
+───────────────────────────────────────── */
+.app-alert-danger {
+  background-color: var(--app-danger-bg);
+  border: 1px solid var(--app-danger-border);
+  color: #fca5a5;
+  border-radius: 0.45rem;
+  font-size: 0.82rem;
+}
+
+/* ─────────────────────────────────────────
+   Link
+───────────────────────────────────────── */
+.app-link {
+  color: var(--app-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.app-link:hover {
+  color: var(--app-accent-hover);
+  text-decoration: underline;
+}
+
+/* ─────────────────────────────────────────
+   Status Badges
+───────────────────────────────────────── */
+.status-badge {
+  display: inline-block;
+  padding: 0.18rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.status-pending   { background: #1c2333; color: #94a3b8; border: 1px solid #2e3a50; }
+.status-processed { background: #1a2340; color: #93c5fd; border: 1px solid #1e3a5f; }
+.status-analyzing { background: #1f1a00; color: #fcd34d; border: 1px solid #3d3200; animation: pulse 2s infinite; }
+.status-analyzed  { background: #0a2010; color: #6ee7b7; border: 1px solid #0d3320; }
+.status-failed    { background: #200a0a; color: #fca5a5; border: 1px solid #3d0f0f; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+
+/* ─────────────────────────────────────────
+   Risk Badges
+───────────────────────────────────────── */
+.risk-badge {
+  display: inline-block;
+  padding: 0.18rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.risk-badge-lg {
+  padding: 0.35rem 0.85rem;
+  font-size: 0.78rem;
+}
+
+.risk-low    { background: var(--app-success-bg); color: var(--app-success); border: 1px solid var(--app-success-border); }
+.risk-medium { background: var(--app-warning-bg); color: var(--app-warning); border: 1px solid var(--app-warning-border); }
+.risk-high   { background: var(--app-danger-bg);  color: var(--app-danger);  border: 1px solid var(--app-danger-border); }
+
+/* ─────────────────────────────────────────
+   Outline Secondary Button (Bootstrap override)
+───────────────────────────────────────── */
+.btn-outline-secondary {
+  border-color: var(--app-border);
+  color: var(--app-text-muted);
+  font-size: 0.8rem;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--app-hover-bg);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--app-text-primary);
+}
+
+/* ─────────────────────────────────────────
+   Spinner
+───────────────────────────────────────── */
+.text-muted {
+  color: var(--app-text-muted) !important;
+}
+
+.text-secondary {
+  color: var(--app-text-secondary) !important;
+}
